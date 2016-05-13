@@ -1,5 +1,9 @@
-require 'rails_helper'
+require 'spec_helper'
+require 'capybara/rspec'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+  it "is valid with name, email and password confirmation" do
+    u = create(:user, :agent)
+  end
+
+  end

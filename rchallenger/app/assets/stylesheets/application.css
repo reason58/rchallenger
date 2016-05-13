@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    margin: 0px;
+    background: white;
+}
+.header {
+    top: 0px;
+    height: 25px;
+    background: grey;
+    border: 1px solid #CCC;
+    width: 100%;
+    margin: 0px auto;
+    border-bottom: 2px solid black;
+    position: fixed;
+}
+.content {
+    width: 960px;
+    background: #F0F0F0;
+    border: 1px solid #CCC;
+    height: 2000px;
+    margin:  20px auto;
+}
+
+#user_nav {
+    position: relative;
+    text-align: right;
+    font-size: .50cm;
+    color: white;
+}
+
+#user_nav a {
+    color: white;
+    text-decoration: none;
+}
+
+#user_nav a:hover{
+    color: yellow;
+    text-decoration: none;
+}
