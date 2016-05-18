@@ -8,37 +8,24 @@
 </head>
 <body>
 
+<!-- User Nav Bar (Top) -->
+
   <div id="user_nav" class = "header">
        <ul id="nav_list">
-         <li class = "nav_element"> <% if current_user %>
+         <li id = "loginbutton" class = "nav_element">
+           <% if current_user %>
       Logged in as <%= current_user.email %>.
       <%= link_to "Log out", log_out_path %>
   <% else %>
       <%= link_to "Log in", log_in_path %>
   <% end %> </li>
-      <li class = "nav_element"> <%= link_to "RChallenger", root_path%> </li>
+         <li id = "homebutton" class = "nav_element"> <%= link_to "RChallenger", root_path%> </li>
+         <li class = "nav_element"> <%= link_to "Blog" %> </li>
+         <li class = "nav_element"> <%= link_to "Forums" %> </li>
     </ul>
     </div>
 
-<!--
-<div id="user_nav" div class = "header">
-  <% if current_user %>
-    Logged in as <%= current_user.email %>.
-    <%= link_to "Log out", log_out_path %>
-  <% else %>
-    <%= link_to "Log in", log_in_path %>
-  <% end %>
-
-  <%= link_to "RChallenger"%>
-</div>
-
--->
-
-<!---
-<div id="title_nav" div class = "header">
-  ## <%= link_to "RChallenger"%>
-</div>
--->
+<!-- User Registration -->
 
 <div id="user_registration">
   <% if current_user %>
