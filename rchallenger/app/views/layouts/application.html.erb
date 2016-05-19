@@ -8,13 +8,33 @@
 </head>
 <body>
 
-<!-- User Nav Bar (Top) -->
+
+<!-- User Nav Bar (Top - Experimental - Actual on L28) -->
+
+<div id="user_nav" class = "header">
+  <ul id="nav_list">
+      <% if current_user %>
+        <li id = "logoutbutton" class = "nav_element"> <%= link_to "Log out", log_out_path %> </li>
+      <% else %>
+        <li id = "loginbutton" class = "nav_element">
+          <a href="javascript:void(0)" onClick="showLoginForm();"> Log In </a>
+      <% end %>
+    <div class = "logindropdown-content" id = "logindropdown">
+      <%= link_to "Log in", log_in_path %>
+   </div>
+    </li>
+    <li id = "homebutton" class = "nav_element"> <%= link_to "RChallenger", root_path%> </li>
+    <li class = "nav_element"> <%= link_to "Blog" %> </li>
+    <li class = "nav_element"> <%= link_to "Forums" %> </li>
+  </ul>
+</div>
+
+<!-- User Nav Bar (Top)
 
   <div id="user_nav" class = "header">
        <ul id="nav_list">
          <li id = "loginbutton" class = "nav_element">
            <% if current_user %>
-      Logged in as <%= current_user.email %>.
       <%= link_to "Log out", log_out_path %>
   <% else %>
       <%= link_to "Log in", log_in_path %>
@@ -24,6 +44,9 @@
          <li class = "nav_element"> <%= link_to "Forums" %> </li>
     </ul>
     </div>
+
+-->
+
 
 <!-- User Registration -->
 
