@@ -15,29 +15,90 @@
 //= require turbolinks
 //= require_tree .
 
-function showLoginForm(){
-    console.log("Showing Login Form");
-    document.getElementById("logindropdown").classList.toggle("show");
-    console.log(document.getElementById('logindropdown'));
+$(document).ready(function(){
+    $('#login-trigger').click(function(){
+        $(this).next('#login-content').slideToggle();
+        $(this).toggleClass('active');
 
-}
+        if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
+        else $(this).find('span').html('&#x25BC;')
+    })
+});
 
-/* Possible pulldown functionality
+/*
+window.onload = function() {
+    var loginButton = document.getElementById("loginbutton");
 
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-window.onclick = function(e) {
-    if (!e.target.matches('.dropbtn')) {
-
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        for (var d = 0; d < dropdowns.length; d++) {
-            var openDropdown = dropdowns [d];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
+    document.addEventListener('click', function() {
+        if ($('#logindropdown').is(':visible')) {
+            if (!$(event.target).closest('#logindropdown', '#loginbutton').length) {
+                $("#logindropdown").hide();
             }
-        }
-    }
+            console.log("is visible");
+        }}, false);
+
+    loginButton.addEventListener('click', function() {
+        $("#logindropdown").toggle();
+    }, false);
 }
-    */
+*/
+
+
+/*
+    loginButton.addEventListener('click', function () {{
+            if (!$(event.target).closest('#logindropdown').length) {
+                $("#logindropdown").toggle();
+                console.log('Now hiding loginbutton');
+            }
+            ;
+        }
+    }, false);
+
+}
+*/
+
+/*
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('#logindropdown').length) {
+            $("#logindropdown").toggle();
+            console.log('Now hiding loginbutton');
+        };
+    });
+}
+*/
+
+/*
+$(document).ready(function(){
+    $("#loginbutton").click(function(){
+        $("#logindropdown").toggle();
+
+        /* Status Check
+
+        if($('#logindropdown').is(':visible')) {
+            console.log("Dropdown is visible");
+        }
+        else if($('#logindropdown').is(':hidden')) {
+            console.log("Dropdown is hidden");
+        }
+    })
+});
+*/
+/*
+$(document).click(function(event) {
+    if ($('#logindropdown').is(':visible')) {
+        console.log("Click event fires");
+        /*if(!$(event.target).closest('#logindropdown-content').length) {
+            $("#logindropdown-content").hide();
+        }
+    })
+*/
+/*
+ $(document).on('click', function(event) {
+ if ($('#logindropdown').is(':visible')) {
+ if(!$(event.target).closest('#logindropdown-content').length) {
+ $("#logindropdown-content").hide();
+ }
+ }
+ })
+
+ */
