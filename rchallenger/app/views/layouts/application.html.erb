@@ -16,12 +16,7 @@
         Log In <span>▼</span>
       </a>
       <div id="login-content">
-        <form>
-          <!-- <fieldset id="inputs"> -->
             <%= form_tag sessions_path do %>
-            <!-- <input id="username" type="email" name="Email" placeholder="Your email address" required>
-            <input id="password" type="password" name="Password" placeholder="Password" required>
-            -->
             <p>
               <%= label_tag :email %><br />
               <%= text_field_tag :email, params[:email] %>
@@ -30,15 +25,8 @@
               <%= label_tag :password %><br />
               <%= password_field_tag :password %>
             </p>
-          <!-- </fieldset>
-          <fieldset id="actions">
-            <input type="submit" id="submit" value="Log in">
-            <label><input type="checkbox" checked="checked"> Keep me signed in</label>
-            -->
             <p class="button"><%= submit_tag "Log In" %></p>
             <% end %>
-          <!-- </fieldset> -->
-        </form>
       </div>
     </li>
     <li id="signup">
